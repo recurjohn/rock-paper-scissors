@@ -41,19 +41,29 @@ function playRound(playerSelection, computerSelection) {
     console.log("CPU answered: " + computerSelection); //debugging only - show computer input
 
     switch(playerSelection) {
-        case (playerSelection = "rock"):
-            if (computerSelection == "rock") {
-                console.log("Tie. Computer plays rock.");
-            } else if (computerSelection == "paper") {
-                console.log("Lose. Computer plays paper.");
-            } else {
-                console.log("Win! Computer plays scissors.");
-            }
-            break;
-        case (playerSelection = "paper"):
-            break;
-        case (playerSelection = "scissors"):
-            break;
+        case "rock":
+          if (computerSelection == "rock") {
+            console.log("Tie. Computer plays rock.");
+          } else if (computerSelection == "paper") {
+            console.log("Lose. Computer plays paper.");
+          } else {
+            console.log("Win! Computer plays scissors.");
+          }
+        break;
+            
+        case "paper":
+          if (computerSelection == "rock") {
+            console.log("Win! Computer plays rock.");
+          } else if (computerSelection == "paper") {
+            console.log("Tie. Computer plays paper.");
+          } else {
+            console.log("Lose. Computer plays scissors.");
+          }
+          break;
+          
+        case"scissors":
+          break;
+
         default:
          console.log("Not a valid input, please try again.");
     }
