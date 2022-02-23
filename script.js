@@ -5,6 +5,8 @@ function computerPlay() {
     //console.log(choice);
 }
 
+let score = 0; //setup counter
+
 function playRound(playerSelection, computerSelection) {
     /* psuedocode
     change player input to case-sensitive 
@@ -38,16 +40,21 @@ function playRound(playerSelection, computerSelection) {
 
     computerSelection = computerPlay(); //get computer input
 
-    console.log("CPU answered: " + computerSelection); //debugging only - show computer input
+    //console.log(score); 
+
+    //console.log("CPU answered: " + computerSelection); //debugging only - show computer input
 
     switch(playerSelection) {
         case "rock":
           if (computerSelection == "rock") {
             console.log("Tie. Computer plays rock.");
+            return score;
           } else if (computerSelection == "paper") {
             console.log("Lose. Computer plays paper.");
+            return score--;
           } else {
             console.log("Win! Computer plays scissors.");
+            return score++;
           }
         break;
             
@@ -60,8 +67,15 @@ function playRound(playerSelection, computerSelection) {
             console.log("Lose. Computer plays scissors.");
           }
           break;
-          
+
         case"scissors":
+          if (computerSelection == "rock") {
+            console.log("Lose. Computer plays rock.");
+          } else if (computerSelection == "paper") {
+            console.log("Win! Computer plays paper.");
+          } else {
+            console.log("Tie. Computer plays scissors.");
+          }
           break;
 
         default:
