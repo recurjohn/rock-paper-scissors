@@ -81,8 +81,17 @@ function playRound(playerSelection, computerSelection) {
         default:
          console.log("Not a valid input, please try again.");
     }
+}
 
-    //Win message
-    //Lose message
-    //Tie message
+function game(rounds) {
+    for (let i = 0; i < rounds; i++) {
+        console.log("Round " + (i+1));
+        let userAnswer = prompt("Please put in your answer");
+        playRound(userAnswer);
+
+        console.log("Your current score is " + score); 
+    }
+
+    console.log("Your final score is " + score);
+    return score;
 }
