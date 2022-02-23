@@ -34,25 +34,28 @@ function playRound(playerSelection, computerSelection) {
     */
     let playerSelectionRefined = playerSelection.toLowerCase(); //turn user input to lowercase. Should now be "rock", "paper", or "scissors"
 
+    playerSelection = playerSelectionRefined; //set the new value back to the original
+
     computerSelection = computerPlay(); //get computer input
 
     console.log("CPU answered: " + computerSelection); //debugging only - show computer input
 
-    switch(playerSelection, computerSelection) {
-        case "rock":
-            if (computerSelection = "rock") {
+    switch(playerSelection) {
+        case (playerSelection = "rock"):
+            if (computerSelection == "rock") {
                 console.log("Tie. Computer plays rock.");
-            } else if (computerSelection = "paper") {
+            } else if (computerSelection == "paper") {
                 console.log("Lose. Computer plays paper.");
             } else {
                 console.log("Win! Computer plays scissors.");
             }
             break;
-        case "paper":
+        case (playerSelection = "paper"):
             break;
-        case "scissors":
+        case (playerSelection = "scissors"):
             break;
-        return "Not a valid input, please try again.";
+        default:
+         console.log("Not a valid input, please try again.");
     }
 
     //Win message
