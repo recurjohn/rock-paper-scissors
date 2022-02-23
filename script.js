@@ -83,13 +83,21 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
 function game(rounds) {
     for (let i = 0; i < rounds; i++) {
         console.log("Round " + (i+1));
         let userAnswer = prompt("Please put in your answer");
-        playRound(userAnswer);
-
+        playRound(userAnswer); //If incorrect input, it keeps going. 
         console.log("Your current score is " + score); 
+
+        /*if (i = (rounds.length - 1)) {
+          console.log("Your final score is " + score);
+        } else {
+          console.log("Your current score is " + score); 
+        }
+
+        i++; //increment round */ //While loop code
     }
 
     console.log("Your final score is " + score);
