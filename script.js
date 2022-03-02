@@ -48,38 +48,68 @@ function playRound(playerSelection, computerSelection) {
         case "rock":
           if (computerSelection == "rock") {
             console.log("Tie. Computer plays rock.");
+            document.getElementById('log').innerHTML = "Tie. You played rock. Computer plays rock.";
+            document.getElementById('results').innerHTML = "Current score: " + score.toString();
             return score;
           } else if (computerSelection == "paper") {
             console.log("Lose. Computer plays paper.");
-            return score--;
+            document.getElementById('log').innerHTML = "Lose. You played rock. Computer plays paper.";
+            score--;
+            document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            return score;
           } else {
             console.log("Win! Computer plays scissors.");
-            return score++;
+            document.getElementById('log').innerHTML = "Win! You played rock. Computer plays scissors.";
+            score++;
+            document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            if (score == 5) {
+              document.getElementById('results').innerHTML = "Congrats! You reached 5 points and won."; //does not end game
+            }
+            return score;
           }
-        break;
             
         case "paper":
           if (computerSelection == "rock") {
             console.log("Win! Computer plays rock.");
+            document.getElementById('log').innerHTML = "Win! You played paper. Computer plays rock.";
+            score++;
+            document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            return score;
           } else if (computerSelection == "paper") {
             console.log("Tie. Computer plays paper.");
+            document.getElementById('log').innerHTML = "Tie. You played paper. Computer plays paper.";
+            document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            return score;
           } else {
             console.log("Lose. Computer plays scissors.");
+            document.getElementById('log').innerHTML = "Lose. You played paper. Computer plays scissors.";
+            score--;
+            return score;
           }
-          break;
 
         case"scissors":
           if (computerSelection == "rock") {
-            console.log("Lose. Computer plays rock.");
+            console.log("Lose. You played scissors. Computer plays rock.");
+            document.getElementById('log').innerHTML = "Lose. Computer plays rock.";
+            score--;
+            document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            return score;
           } else if (computerSelection == "paper") {
             console.log("Win! Computer plays paper.");
+            document.getElementById('log').innerHTML = "Win! You played scissors. Computer plays paper.";
+            score++;
+            document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            return score;
           } else {
             console.log("Tie. Computer plays scissors.");
+            document.getElementById('log').innerHTML = "Tie. You played scissors. Computer plays scissors.";
+            document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            return score;
           }
-          break;
 
         default:
          console.log("Not a valid input, please try again.");
+         document.getElementById('results').innerHTML = "Not a valid input, please try again.";
     }
 }
 
@@ -103,3 +133,11 @@ function game(rounds) {
     console.log("Your final score is " + score);
     return score;
 }
+
+let rock = document.getElementById("rock");
+let paper = document.getElementById("paper");
+let scissors = document.getElementById("scissors");
+
+rock.addEventListener("click", function(){playRound("rock")});
+paper.addEventListener("click", function(){playRound("paper")});
+scissors.addEventListener("click", function(){playRound("scissors")});
