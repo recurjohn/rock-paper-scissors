@@ -62,9 +62,11 @@ function playRound(playerSelection, computerSelection) {
             document.getElementById('log').innerHTML = "Win! You played rock. Computer plays scissors.";
             score++;
             document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            
             if (score == 5) {
               document.getElementById('results').innerHTML = "Congrats! You reached 5 points and won."; //does not end game
             }
+            
             return score;
           }
             
@@ -74,6 +76,11 @@ function playRound(playerSelection, computerSelection) {
             document.getElementById('log').innerHTML = "Win! You played paper. Computer plays rock.";
             score++;
             document.getElementById('results').innerHTML = "Current score: " + score.toString();
+            
+            if (score == 5) {
+              document.getElementById('results').innerHTML = "Congrats! You reached 5 points and won."; //does not end game
+            }
+
             return score;
           } else if (computerSelection == "paper") {
             console.log("Tie. Computer plays paper.");
@@ -97,7 +104,12 @@ function playRound(playerSelection, computerSelection) {
           } else if (computerSelection == "paper") {
             console.log("Win! Computer plays paper.");
             document.getElementById('log').innerHTML = "Win! You played scissors. Computer plays paper.";
+            
             score++;
+            if (score == 5) {
+              document.getElementById('results').innerHTML = "Congrats! You reached 5 points and won."; //does not end game
+            }
+
             document.getElementById('results').innerHTML = "Current score: " + score.toString();
             return score;
           } else {

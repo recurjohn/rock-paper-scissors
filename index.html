@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
 <body>
-    <button type="button" id="rock">Rock</button> 
-    <button type="button" id="paper">Paper</button> 
-    <button type="button" id="scissors">Scissors</button> 
+    <div class="hero">
+        <h1>Play Rock, Paper, Scissors</h1>
+    </div>
 
-    <div id="log"></div>
-    <div id="results"></div>
+    <div class="selection">
+        <h2>Choose Your Weapon:</h2>
+        <button type="button" id="rock">Rock</button> 
+        <button type="button" id="paper">Paper</button> 
+        <button type="button" id="scissors">Scissors</button> 
+    </div>
+
+    <div class="outcome"> 
+        <h3>Results: </h3>
+        <div id="log"></div>
+        <div id="results"></div>
+    </div>
 </body>
 </html>
